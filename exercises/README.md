@@ -45,6 +45,12 @@ The following table lists the software requirements for running the lab exercise
  Locked down systems with restricted accounts are not supported.
  </p>
 
+
+ <p class="tip">
+ <b>NOTE</b> - Be sure to verify with the instructors if your course will be utilizing a cloud-based Integrated Development Environment (IDE), such as CodeReady Workspaces.
+ In the case that a cloud-based IDE is provided for the duration of the course, you will still have the option to work on projects locally on your own system.
+ </p>
+
 ### Linux
 
 1. Enable the nodejs 8 modules in Fedora and install the latest nodejs 8.x LTS release.
@@ -121,7 +127,7 @@ chmod +x /usr/local/bin/oc
 
 You will be adding several directories to the ***PATH*** environment variable. Follow the instructions at https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/ to edit the ***PATH*** environment variable on Windows 10.
 
-1. Download the Node.js 8.x LTS Windows 64-bit binary archive file from https://nodejs.org/dist/latest-v8.x/. The binary will be named as ***node-v8.x.y-win-x64.zip***, where 'x' and 'y' indicates the major and minor version of the latest Node.js 8 LTS release. 
+1. Download the Node.js 8.x LTS Windows 64-bit binary archive file from https://nodejs.org/dist/latest-v8.x/. The binary will be named as ***node-v8.x.y-win-x64.zip***, where 'x' and 'y' indicates the major and minor version of the latest Node.js 8 LTS release.
 
 2. Extract the zip file archive under a suitable folder in the ***C:\*** drive, for example ***C:\nodejs***. Make sure that your directory name does not have any spaces in it.
 

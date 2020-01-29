@@ -36,6 +36,10 @@ As a learner you will be able to
 > The Big Picture is our emerging architecture; starting with an empty cluster we populate it with projects and some ci/cd tooling.
 
 ![big-picture](../images/big-picture/big-picture-1.jpg)
+
+<p class="tip">
+<b>NOTE</b> - If you are utilizing the cloud-based tools for the course, the tools detailed in the "Your Local" section are already provided; none of the tools are required to be installed on your local machine.
+</p>
 _____
 
 <!-- ## 10,000 Ft View
@@ -372,7 +376,7 @@ JENKINS_OPTS=--sessionTimeout=720
 ```
   * You might be wondering why we have to replace <YOUR_NAME> here and can't just rely on the `namespace_prefix` variable that we've been using previously. This is because the replacement is handled by two different engines (one being ansible -- which knows about `namespace_prefix` and the other being the oc client, which does not). Because the params files are processed by the oc client, we need to update this here.
 
-2. Add a `jenkins` variable to the Ansible inventory underneath the jenkins-mongo in  `inventory/host_vars/ci-cd-tooling.yml` as shown below to create a DeploymentConfig for Jenkins. In order for Jenkins to be able to run `npm` commands we must configure a jenkins build slave for it to use. This slave will be dynamically provisioned when we run a build. It needs to have Node.js and npm and a C compiler installed in it. 
+2. Add a `jenkins` variable to the Ansible inventory underneath the jenkins-mongo in  `inventory/host_vars/ci-cd-tooling.yml` as shown below to create a DeploymentConfig for Jenkins. In order for Jenkins to be able to run `npm` commands we must configure a jenkins build slave for it to use. This slave will be dynamically provisioned when we run a build. It needs to have Node.js and npm and a C compiler installed in it.
 
 <p class="tip">
 <b>NOTE</b> These slaves can take a time to build themselves so to speed up we have placed the slave with a corresponding ImageStream within OpenShift. To leverage this existing slave image, we are using a feature of the openshift-applier to process a couple of post-steps part of the inventory. These steps are utilized to perform pre and post tasks necessary to make our inventory work correctly. In this case, we use the post steps to tag and label the jenkins-slave-npm ImageStream within our CI/CD project so Jenkins knows how to find and use it.
